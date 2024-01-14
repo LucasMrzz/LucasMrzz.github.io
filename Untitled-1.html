@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil de Lucas Maurize - Étudiant en GEII</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f7ff;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: #1e90ff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            background: linear-gradient(135deg, #1e90ff, #00ffff);
+            z-index: -1;
+            animation: animateBanner 8s ease infinite;
+        }
+        
+        @keyframes animateBanner {
+            0% {
+                transform: translateY(-25%);
+            }
+            100% {
+                transform: translateY(25%);
+            }
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        nav ul li:hover {
+            transform: translateY(-3px);
+        }
+        
+        section {
+            display: none;
+            padding: 50px;
+            text-align: left;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        section.active {
+            display: block;
+        }
+        
+        h2 {
+            color: #1e90ff;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .address {
+            margin-top: 20px;
+        }
+        
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        img:hover, video:hover {
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: #1e90ff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            flex-shrink: 0; /* Empêche le footer de réduire */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lucas Maurize - Étudiant en GEII</h1>
+        <nav>
+            <ul>
+                <li><a href="#educationTab" onclick="openTab('education')">Éducation</a></li>
+                <li><a href="#diplomaTab" onclick="openTab('diploma')">Diplômes</a></li>
+                <li><a href="#habitationTab" onclick="openTab('habitation')">Habitation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="education" class="active">
+            <h2>Éducation</h2>
+            <p>Je suis Lucas Maurize, étudiant en 3<sup>e</sup> année de Génie Électrique et Informatique Industrielle à l'IUT de l'Aisne, Cuffies.</p>
+            <p>J'ai obtenu mon Baccalauréat avec mention AB, spécialités en Physique-chimie / Sciences de l'ingénieur et mathématiques complémentaires. Mes matières préférées sont l'électronique et la programmation.</p>
+            <p>Je participe activement à des projets d'ingénierie, notamment en concevant des systèmes électroniques pour des applications pratiques.</p>
+            <p>Dans le cadre de mes études, j'ai également suivi des cours avancés en contrôle et automatisation.</p>
+        </section>
+
+        <section id="diploma">
+            <h2>Diplômes</h2>
+            <p>Actuellement en cours d'obtention du Diplôme de BUT GEII de 2<sup>e</sup> année.</p>
+            <p>J'ai reçu des récompenses pour mes travaux de programmation et mes projets d'automatisation industrielle lors de mon cursus.</p>
+            <p>Je suis passionné par l'intégration des technologies numériques dans des applications industrielles concrètes.</p>
+            <p>Je suis également membre actif du club de robotique de mon université.</p>
+        </section>
+
+        <section id="habitation">
+            <h2>Habitation</h2>
+            <div class="address">
+                <h3>Adresse personnelle :</h3>
+                <p>14 rue des Nouettes, Romilly-sur-Seine</p>
+            </div>
+            <div class="address">
+                <h3>Logement étudiant :</h3>
+                <p>Je réside actuellement à Cuffies, à proximité de l'IUT de l'Aisne où je suis mes études.</p>
+                <p>Vivre près du campus facilite ma participation aux projets étudiants et aux activités associatives.</p>
+                <p>Mon logement étudiant est conçu pour favoriser un environnement propice aux études.</p>
+            </div>
+        </section>
+
+        <img src="image.jpg" alt="Photo de Lucas Maurize">
+        <video controls autoplay loop>
+            <source src="video.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de la vidéo.
+        </video>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Lucas Maurize - GEII</p>
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const selectedTab = document.getElementById(tabName);
+            selectedTab.classList.add('active');
+        }
+    </script>
+</body>
+</html>
